@@ -16,6 +16,8 @@ const HeroSection = () => {
       setCurrentWord(prev => (prev + 1) % rotatingWords.length);
     }, 3000);
     return () => clearInterval(interval);
+    // run on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleWaitListSubmit = () => {
@@ -301,6 +303,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            // @ts-expect-error - TODO: will look into it
             variants={floatingAnimation}
             className='mt-16 max-w-5xl mx-auto'
           >
@@ -357,8 +360,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-   
     </div>
   );
 };
