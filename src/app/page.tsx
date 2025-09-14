@@ -1,8 +1,12 @@
 'use client';
 
-import Footer from '@/components/footer';
-import HeaderNav from '@/components/header-nav';
-import { User } from '@/types/user';
+import DemoSection from '@/components/landing-page-sections/Demo';
+import FAQSection from '@/components/landing-page-sections/FAQ';
+import FeaturesSection from '@/components/landing-page-sections/Features';
+import FooterSection from '@/components/landing-page-sections/Footer';
+import HeroSection from '@/components/landing-page-sections/HeroSection';
+import HowItWorksSection from '@/components/landing-page-sections/HowItWorks';
+import TestimonialsSection from '@/components/landing-page-sections/Testimonials';
 import { publishMessage } from '@/utils/post-message';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -67,11 +71,18 @@ export default function Page() {
   return (
     <>
       {/* seo */}
-      <HeaderNav isAuthed={isAuthenticated} />
-      <div className='bg-slate-50 h-[84%] flex items-center justify-center'>
-        <div className='text-slate-700 text-xl font-light'>Coming Soon..</div>
+      {/* <HeaderNav isAuthed={isAuthenticated} /> */}
+      <div className=''>
+        <HeroSection />
+        <FeaturesSection />
+        <DemoSection />
+        <HowItWorksSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <FooterSection />
+        {/* <div className='text-slate-700 text-xl font-light'>Coming Soon..</div> */}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
