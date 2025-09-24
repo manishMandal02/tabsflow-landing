@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { HiArrowRight, HiLightningBolt, HiUsers, HiStar, HiViewGrid, HiSparkles } from 'react-icons/hi';
 
 import { MdKeyboardCommandKey } from 'react-icons/md';
+import Image from 'next/image';
 
 const HeroSection = () => {
   const [email, setEmail] = useState('');
@@ -111,17 +112,24 @@ const HeroSection = () => {
       <nav className='relative z-10 px-6 py-4'>
         <div className='max-w-7xl mx-auto flex justify-between items-center'>
           <motion.div
-            className='flex items-center space-x-2'
+            className='flex items-center space-x-px'
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className='w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center shadow-lg'>
-              <HiViewGrid className='w-5 h-5 text-white' />
+            <div className=''>
+              {/* <HiViewGrid className='w-5 h-5 text-white' /> */}
+              <Image
+                width={70}
+                height={70}
+                className=''
+                alt='TabsFlow logo'
+                src={'https://res.cloudinary.com/mandal/image/upload/v1758723769/tabsflow/logo.png'}
+              />
             </div>
-            <span className='text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent'>
+            <p className='text-[22px] font-semibold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent'>
               TabsFlow
-            </span>
+            </p>
           </motion.div>
 
           <motion.div
@@ -167,7 +175,7 @@ const HeroSection = () => {
                 >
                   <HiLightningBolt className='w-4 h-4' />
                 </motion.div>
-                <span className='font-semibold'>25+ Powerful Commands</span>
+                <span className='font-semibold'>30+ Powerful Commands</span>
                 <div className='w-1 h-1 bg-emerald-400 rounded-full'></div>
                 <span>Browser Extension</span>
                 <HiSparkles className='w-4 h-4 text-emerald-500' />
@@ -285,12 +293,7 @@ const HeroSection = () => {
               >
                 <div className='flex items-center space-x-2'>
                   <HiUsers className='w-4 h-4' />
-                  <span className='text-sm font-medium'>500+ Early Users</span>
-                </div>
-                <div className='w-1 h-1 bg-slate-400 rounded-full'></div>
-                <div className='flex items-center space-x-2'>
-                  <MdKeyboardCommandKey className='w-4 h-4' />
-                  <span className='text-sm font-medium'>25+ Commands</span>
+                  <span className='text-sm font-medium'>50+ Early Users</span>
                 </div>
                 <div className='w-1 h-1 bg-slate-400 rounded-full'></div>
                 <span className='text-sm font-medium'>Coming Soon</span>
